@@ -1,0 +1,13 @@
+pandas
+numpy
+notebook
+matplotlib
+seaborn
+scikit-learn
+imblearn
+xgboost
+PyYAML
+pymongo
+python-dotenv
+apache-airflow
+-e .
