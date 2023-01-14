@@ -18,4 +18,5 @@ setup(name="Concrete Strength Predictor",
     author="sachin",
     author_email="sachinv1004@gmail.com",
     install_requires=get_requirements(),
+    packages=find_packages(),
     )

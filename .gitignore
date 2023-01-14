@@ -1,2 +1,5 @@
 Concrete Compressive Strength Prediction.pdf
 Concrete_Data.xls
+data_dump.py
+.env
+logs
