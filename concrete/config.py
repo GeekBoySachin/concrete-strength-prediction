@@ -8,3 +8,4 @@ class EnvironmentVariables:
 
 env = EnvironmentVariables()
 mongo_client = pymongo.MongoClient(env.mongo_url)
+TARGET_COLUMN = "Concrete compressive strength(MPa, megapascals)"
