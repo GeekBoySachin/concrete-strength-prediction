@@ -10,4 +10,5 @@ PyYAML
 pymongo
 python-dotenv
 apache-airflow
+xlrd
 -e .
