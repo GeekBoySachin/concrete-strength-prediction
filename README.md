@@ -15,6 +15,23 @@ need for acceptable compressive strength.
 
 # Language Used:
 >Python 3.x
+
+### Create a conda environment after opening the repository in VSCODE
+
+```bash
+conda create --prefix ./env python=3.7 -y
+```
+
+```bash
+conda activate ./env
+```
+OR
+```bash
+source activate ./env
+```
+
 ## Required Package:
 ### Create python environment and Install the required packages by executing setup.py file 
-> `python setup.py`
+```
+python setup.py
+```
