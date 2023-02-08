@@ -24,3 +24,5 @@ if __name__=="__main__":
     print("Sample list data:",json_record[0])
     #insert converted json record to mongo db
     mongo_client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
+    df = pd.DataFrame(list(mongo_client[DATABASE_NAME][COLLECTION_NAME].find({},{"_id":0})))
+    print(df.columns)

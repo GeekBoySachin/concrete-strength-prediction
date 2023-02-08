@@ -1,42 +1,16 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
- 
-@GeekBoySachin 
-GeekBoySachin
-/
-python-project-template
-Public template
-Cannot fork because you own this repository and are not a member of any organizations.
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-python-project-template/.gitignore
-@GeekBoySachin
-GeekBoySachin Starter code template for python"
-Latest commit 9ff1e4f 13 minutes ago
- History
- 1 contributor
-132 lines (107 sloc)  1.78 KB
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
+artifact
 # C extensions
 *.so
-
+prediction
+saved_models
+demotest.py
+logs
+artifacts
+raw_data
 # Distribution / packaging
 .Python
 build/
@@ -158,21 +132,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-# ignore log files 
-*.log
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-python-project-template/.gitignore at main · GeekBoySachin/python-project-template
