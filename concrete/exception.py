@@ -8,7 +8,7 @@ class ConcreteException(Exception):
     def error_message_detail(self,error:str,error_details:sys):
         _,_,exc_tab = error_details.exc_info()
         file_name = exc_tab.tb_frame.f_code.co_filename
-        error_message = f"Error occurred in python script{file_name} in line{exc_tab.tb_lineno} error message {error}"
+        error_message = f"Error occurred in python script{file_name} in line {exc_tab.tb_lineno} error message {error}"
         return error_message
 
     def __str__(self):

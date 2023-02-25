@@ -20,11 +20,11 @@ class TrainingPipelineConfig:
 
 class DataIngestionConfig:
 
-    def __init__(self,training_pipline_config:TrainingPipelineConfig):
+    def __init__(self,training_pipeline_config:TrainingPipelineConfig):
         try:
             self.database_name = "concrete_database"
             self.collection_name ="concrete"
-            self.data_ingestion_dir = os.path.join(os.getcwd(),training_pipline_config.artifact_dir,"data_ingestion")
+            self.data_ingestion_dir = os.path.join(os.getcwd(),training_pipeline_config.artifact_dir,"data_ingestion")
             self.feature_store_filepath = os.path.join(self.data_ingestion_dir,"feature_store",FILE_NAME)
             self.train_filepath = os.path.join(self.data_ingestion_dir,"dataset",TRAIN_FILE_NAME)
             self.test_filepath = os.path.join(self.data_ingestion_dir,"dataset",TEST_FILE_NAME)
@@ -40,7 +40,7 @@ class DataIngestionConfig:
 
 class DataValidationConfig:
 
-    def __init__(self,training_pipline_config:TrainingPipelineConfig):
+    def __init__(self,training_pipeline_config:TrainingPipelineConfig):
         self.data_validation_dir = os.path.join(training_pipeline_config.artifact_dir , "data_validation")
         self.report_file_path=os.path.join(self.data_validation_dir, "report.yaml")
         self.missing_threshold:float = 0.2
