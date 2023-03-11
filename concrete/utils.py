@@ -34,3 +34,23 @@ def write_yaml_file(file_path,data:dict):
             yaml.dump(data,file_writer)
     except Exception as e:
         raise ConcreteException(e, sys)
+
+def save_numpy_array_data(file_path:str,array:np.array):
+    try:
+        dir_name = os.path.dirname(file_path)
+        os.makedirs(dir_name,exist_ok=True)
+        with open(file_path,"wb") as file_obj:
+            np.save(file_obj,array)
+    except Exception as e:
+        raise ConcreteException(e, sys)
+
+
+def save_object(file_path: str, obj: object) -> None:
+    try:
+        logging.info("Entered the save_object method of utils")
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        with open(file_path, "wb") as file_obj:
+            dill.dump(obj, file_obj)
+        logging.info("Exited the save_object method of utils")
+    except Exception as e:
+        raise ConcreteException(e, sys) from e
