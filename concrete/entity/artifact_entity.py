@@ -19,8 +19,8 @@ class DataTransformationArtifact:
 @dataclass
 class ModelTrainerArtifact:
     model_path:str 
-    f1_train_score:float 
-    f1_test_score:float
+    train_r2_score:float 
+    test_r2_score:float
 
 @dataclass
 class ModelEvaluationArtifact:

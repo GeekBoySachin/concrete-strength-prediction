@@ -2,6 +2,8 @@ import os,sys
 from concrete.components.data_ingestion import DataIngestion
 from concrete.components.data_validation import DataValidation
 from concrete.components.data_transformation import DataTransformation
+from concrete.components.model_trainer import ModelTrainer
+from concrete.components.model_evaluation import ModelEvaluation
 from concrete.entity import config_entity
 from concrete.exception import ConcreteException
 
@@ -25,8 +27,23 @@ def start_training_pipeline():
         data_transfromation_config = config_entity.DataTransformationConfig(
             training_pipeline_config=training_pipeline_config)
         data_transformation = DataTransformation(data_transformation_config=data_transfromation_config, data_ingestion_artifact=data_ingestion_artifact)
-        data_transformation.initiate_data_transformation()
+        data_transformation_artifact = data_transformation.initiate_data_transformation()
 
         #model training
+
+        model_trainer_config = config_entity.ModelTrainerConfig(training_pipeline_config=training_pipeline_config)
+        model_training = ModelTrainer(model_trainer_config = model_trainer_config,data_transformation_artifact = data_transformation_artifact)
+        model_trainer_artifact = model_training.initiate_model_trainer()
+
+        #model evaluation
+
+        model_eval_config = config_entity.ModelEvaluationConfig(training_pipeline_config=training_pipeline_config)
+        model_evaluation = ModelEvaluation(
+            model_eval_config=model_eval_config,
+            data_ingestion_artifact = data_ingestion_artifact,
+            data_transformation_artifact=data_transformation_artifact,
+            model_trainer_artifact=model_trainer_artifact
+        )
+        model_eval_artifact = model_evaluation.initiate_model_evaluation()
     except Exception as e:
         raise ConcreteException(e,sys)

@@ -64,5 +64,6 @@ class DataTransformation:
                 transformed_train_path=self.data_transformation_config.transformed_train_path, 
                 transformed_test_path=self.data_transformation_config.transformed_test_path
                 )
+            return data_transformation_artifact
         except Exception as e:
             raise ConcreteException(e, sys)
