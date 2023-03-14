@@ -9,6 +9,6 @@ xgboost
 PyYAML
 pymongo
 python-dotenv
-apache-airflow
+gunicorn
 xlrd
 -e .

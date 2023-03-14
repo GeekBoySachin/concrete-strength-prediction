@@ -1,0 +1,9 @@
+version: "1"
+services:
+ application:
+    image: ${IMAGE_NAME}
+    container_name: concrete
+    ports:
+      - "8080:8080"
+    environment:
+      - MONGO_DB_URL=${MONGO_DB_URL}
