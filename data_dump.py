@@ -11,7 +11,9 @@ COLLECTION_NAME="concrete"
 
 if __name__=="__main__":
     #deleting existing database
-    mongo_client.drop_database(DATABASE_NAME)
+    #mongo_client.drop_database(DATABASE_NAME)
+    database = mongo_client[DATABASE_NAME]
+    database.drop_collection(COLLECTION_NAME)
     #reading data from provided file
     df = pd.read_excel(DATA_FILE_PATH)
     print("Rows and column:",df.shape)
